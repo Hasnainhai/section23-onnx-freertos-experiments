@@ -1,0 +1,10 @@
+ARM COMBINED STATIC PATH ANALYSIS
+Kernel: one MobileNetV2 depthwise-convolution channel
+Convolution instruction visits: 28071
+Floating-point helper bound: 146400
+Combined modeled instruction-visit bound: 174471
+Includes the convolution's BL instructions.
+Does not double-count those BL instructions.
+Depends on static control-flow and loop assumptions.
+Excludes interrupts and FreeRTOS scheduling.
+Not a hardware cycle or time WCET bound.

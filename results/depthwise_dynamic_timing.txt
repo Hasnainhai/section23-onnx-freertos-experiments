@@ -1,0 +1,24 @@
+=== REAL MOBILENETV2 INFERENCE KERNEL ===
+Layer: Conv_75/WithoutBiases, channel 0
+Architecture: native x86-64
+Compiler optimization: -O0
+Warm-up calls: 300
+Measured calls: 2000
+Maximum output error: 2.38418579e-07
+KERNEL CORRECTNESS: PASS
+
+=== OBSERVED CALL LATENCY ===
+Minimum (us): 9.442
+Mean (us): 9.622
+Median (us): 9.494
+P95 (us): 9.585
+P99 (us): 9.708
+Maximum (us): 46.979
+Checksum: -2567.935791
+
+LIMITATION:
+Observed execution times include clock-read overhead.
+These measurements are not guaranteed WCET bounds.
+They are for the isolated kernel, not full OpenVINO.
+
+STEP 155 DYNAMIC KERNEL TIMING: PASS

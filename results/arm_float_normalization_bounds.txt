@@ -1,0 +1,7 @@
+ARM FLOAT32 NORMALIZATION LOOP BOUNDS
+Firmware: inference_timercheck.elf
+Loop 1: 0x17d6 -> 0x17e0
+Loop 2: 0x17ee -> 0x17f8
+Nonzero subnormal: at most 23 shifts
+Mathematical basis: 24 - bit_length(fraction)
+Not a hardware WCET bound.

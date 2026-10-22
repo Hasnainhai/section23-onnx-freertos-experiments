@@ -1,0 +1,17 @@
+=== MODEL VERIFICATION ===
+Model exists: True
+Model size: 13964571 bytes
+
+=== OPENVINO CPU INFERENCE ===
+Execution device: ['CPU']
+Input shape: [?,3,224,224]
+Output shape: [?,1000]
+
+=== INFERENCE RESULT ===
+Output shape: (1, 1000)
+Output dtype: float32
+All values finite: True
+Predicted class index: 892
+Highest output score: 5.700220584869385
+
+CPU INFERENCE TEST: PASS

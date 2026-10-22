@@ -1,0 +1,71 @@
+CC = arm-none-eabi-gcc
+SIZE = arm-none-eabi-size
+
+KERNEL = ../FreeRTOS-Kernel
+BUILD = build_clean
+
+CFLAGS = -mcpu=cortex-m3 -mthumb -O0 -g \
+         -ffreestanding -fdata-sections -ffunction-sections \
+         -Iinstrumented_config \
+         -I. \
+         -I$(KERNEL)/include \
+         -I$(KERNEL)/portable/GCC/ARM_CM3
+
+LDFLAGS = -mcpu=cortex-m3 -mthumb \
+          -nostartfiles -specs=nosys.specs \
+          -T linker.ld \
+          -Wl,--gc-sections \
+          -Wl,-Map=$(BUILD)/freertos_clean.map
+
+OBJECTS = \
+    $(BUILD)/startup.o \
+    $(BUILD)/main_deadline_clean.o \
+    $(BUILD)/tasks.o \
+    $(BUILD)/list.o \
+    $(BUILD)/queue.o \
+    $(BUILD)/port.o \
+    $(BUILD)/uart0.o \
+    $(BUILD)/uart_packet_receiver.o \
+    $(BUILD)/packet_decoder.o \
+    $(BUILD)/stack_report.o
+
+.PHONY: all
+
+all: $(BUILD)/freertos_clean.elf
+	$(SIZE) $(BUILD)/freertos_clean.elf
+
+$(BUILD):
+	mkdir -p $(BUILD)
+
+$(BUILD)/startup.o: startup.s | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/main_deadline_clean.o: main_deadline_clean.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/uart0.o: uart0.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/uart_packet_receiver.o: uart_packet_receiver.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/packet_decoder.o: packet_decoder.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/stack_report.o: stack_report.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/tasks.o: $(KERNEL)/tasks.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/list.o: $(KERNEL)/list.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/queue.o: $(KERNEL)/queue.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/port.o: $(KERNEL)/portable/GCC/ARM_CM3/port.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/freertos_clean.elf: $(OBJECTS) linker.ld
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@

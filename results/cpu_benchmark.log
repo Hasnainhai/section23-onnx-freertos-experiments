@@ -1,0 +1,15 @@
+=== CPU INFERENCE BENCHMARK ===
+Execution device: ['CPU']
+Warm-up runs: 20
+Measured runs: 100
+
+=== RESULTS (milliseconds) ===
+Minimum: 4.090
+Mean:    4.443
+Median:  4.363
+P95:     5.201
+P99:     5.803
+Maximum: 5.814
+
+Saved measurements: ../results/cpu_latency.csv
+CPU BENCHMARK: PASS

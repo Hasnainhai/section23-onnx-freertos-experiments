@@ -1,0 +1,60 @@
+=== MULTI-PACKET GPU INFERENCE PIPELINE ===
+Execution device: ['GPU.0']
+SENT seq=1 class=892 timestamp_ms=43559922 bytes=12
+SENT seq=2 class=892 timestamp_ms=43560412 bytes=12
+SENT seq=3 class=892 timestamp_ms=43560833 bytes=12
+SENT seq=4 class=892 timestamp_ms=43561255 bytes=12
+SENT seq=5 class=892 timestamp_ms=43561675 bytes=12
+
+=== FREERTOS RECEIVER OUTPUT ===
+Timer with period zero, disabling
+Starting FreeRTOS on QEMU Cortex-M3
+Starting FreeRTOS scheduler
+FreeRTOS binary packet receiver ready
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS packet seq=1 class=892 timestamp_ms=43559922 valid=1
+FreeRTOS Task 1 running
+FreeRTOS packet seq=2 class=892 timestamp_ms=43560412 valid=1
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS packet seq=3 class=892 timestamp_ms=43560833 valid=1
+FreeRTOS Task 1 running
+FreeRTOS packet seq=4 class=892 timestamp_ms=43561255 valid=1
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS packet seq=5 class=892 timestamp_ms=43561675 valid=1
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+STACK_FREE_WORDS Task1=227 Task2=163 UART=221
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+qemu-system-arm: terminating on signal 15 from pid 61654 (./linux-inference/.venv/bin/python)
+
+=== PACKET VERIFICATION ===
+seq=1: PASS class=892 timestamp_ms=43559922
+seq=2: PASS class=892 timestamp_ms=43560412
+seq=3: PASS class=892 timestamp_ms=43560833
+seq=4: PASS class=892 timestamp_ms=43561255
+seq=5: PASS class=892 timestamp_ms=43561675
+
+Packets sent: 5
+Complete valid packets parsed: 5
+Expected packets verified: 5
+FreeRTOS rejected-packet messages: 0
+MULTI-PACKET GPU TO FREERTOS: PASS

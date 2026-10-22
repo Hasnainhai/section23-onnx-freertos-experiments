@@ -1,0 +1,22 @@
+Firmware: freertos-qemu/build_periodic/freertos_periodic.elf
+Function: packet_decode
+Unique compiled ARM instructions: 126
+Conditional branch instructions: 9
+
+=== BOUNDED CHECKSUM LOOP ===
+Backward branch address: 0x16a6
+Loop target address:     0x168e
+Maximum permitted backward branches: 12
+Backward branches in longest path: 12
+
+=== STATIC CONTROL-FLOW RESULT ===
+Conservative executed-instruction bound: 263
+Path begins: 0x1654
+Path ends:   0x1750
+STATIC INSTRUCTION-PATH ANALYSIS: COMPLETED
+
+=== LIMITATIONS ===
+Conditional outcomes are explored conservatively, so some counted paths may be infeasible.
+Assumes valid accessible arguments, unchanged input during execution, and at most 12 checksum iterations.
+Instruction count is not processor cycles or time.
+This bounds the decoder instruction path only; it is not a WCET bound for MobileNetV2 inference.

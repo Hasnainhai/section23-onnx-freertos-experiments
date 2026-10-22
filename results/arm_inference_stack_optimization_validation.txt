@@ -1,0 +1,11 @@
+ARM INFERENCE MEMORY OPTIMIZATION
+Original static RAM: 3160 bytes
+Optimized static RAM: 2136 bytes
+RAM saved: 1024 bytes
+Original inference stack: 512 words
+Optimized inference stack: 256 words
+Observed unused stack: 231 words
+All 49 convolution outputs verified: YES
+Platform: FreeRTOS on QEMU Cortex-M3
+Limitation: Not a worst-case stack guarantee
+RESULT: PASS

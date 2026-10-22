@@ -1,0 +1,66 @@
+Release period: 25.0 ms
+Relative deadline: 20.0 ms
+
+=== DEVICE: CPU ===
+File: results/periodic_cpu_timing.csv
+Samples: 100
+
+INFERENCE DURATION (ms)
+  Mean: 15.002
+  Median: 14.439
+  P95: 17.749
+  P99: 20.419
+  Maximum: 20.651
+
+START LATENESS (ms)
+  Median: 0.584
+  Maximum: 0.791
+
+RESPONSE FROM SCHEDULED RELEASE (ms)
+  Mean: 15.492
+  P99: 21.082
+  Maximum: 21.125
+
+DEADLINE VALIDATION
+  Recorded misses: 4 / 100
+  Independently calculated misses: 4 / 100
+  Flag discrepancies: 0
+  Missed job numbers: [27, 40, 59, 67]
+  Maximum response accounting difference (ms): 0.0
+  RESULT: DEADLINE FLAGS VERIFIED
+  Response accounting: CONSISTENT
+
+=== DEVICE: GPU ===
+File: results/periodic_gpu_timing.csv
+Samples: 100
+
+INFERENCE DURATION (ms)
+  Mean: 11.371
+  Median: 10.848
+  P95: 15.163
+  P99: 16.554
+  Maximum: 20.383
+
+START LATENESS (ms)
+  Median: 0.084
+  Maximum: 1.866
+
+RESPONSE FROM SCHEDULED RELEASE (ms)
+  Mean: 11.555
+  P99: 16.672
+  Maximum: 21.243
+
+DEADLINE VALIDATION
+  Recorded misses: 1 / 100
+  Independently calculated misses: 1 / 100
+  Flag discrepancies: 0
+  Missed job numbers: [46]
+  Maximum response accounting difference (ms): 0.0
+  RESULT: DEADLINE FLAGS VERIFIED
+  Response accounting: CONSISTENT
+
+=== INTERPRETATION ===
+These are observed results for finite experiments on best-effort Linux.
+They are not formal WCET bounds or guaranteed real-time schedulability results.
+
+DEADLINE VALIDATION FINISHED

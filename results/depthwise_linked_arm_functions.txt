@@ -1,0 +1,256 @@
+=== depthwise_channel ===
+
+linux-inference/depthwise_wcet_arm.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00008000 <depthwise_channel>:
+    8000:	b580      	push	{r7, lr}
+    8002:	b08c      	sub	sp, #48	@ 0x30
+    8004:	af00      	add	r7, sp, #0
+    8006:	60f8      	str	r0, [r7, #12]
+    8008:	60b9      	str	r1, [r7, #8]
+    800a:	607a      	str	r2, [r7, #4]
+    800c:	2300      	movs	r3, #0
+    800e:	62fb      	str	r3, [r7, #44]	@ 0x2c
+    8010:	e063      	b.n	80da <depthwise_channel+0xda>
+    8012:	2300      	movs	r3, #0
+    8014:	62bb      	str	r3, [r7, #40]	@ 0x28
+    8016:	e05a      	b.n	80ce <depthwise_channel+0xce>
+    8018:	f04f 0300 	mov.w	r3, #0
+    801c:	627b      	str	r3, [r7, #36]	@ 0x24
+    801e:	2300      	movs	r3, #0
+    8020:	623b      	str	r3, [r7, #32]
+    8022:	e043      	b.n	80ac <depthwise_channel+0xac>
+    8024:	2300      	movs	r3, #0
+    8026:	61fb      	str	r3, [r7, #28]
+    8028:	e03a      	b.n	80a0 <depthwise_channel+0xa0>
+    802a:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+    802c:	005a      	lsls	r2, r3, #1
+    802e:	6a3b      	ldr	r3, [r7, #32]
+    8030:	4413      	add	r3, r2
+    8032:	3b01      	subs	r3, #1
+    8034:	61bb      	str	r3, [r7, #24]
+    8036:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+    8038:	005a      	lsls	r2, r3, #1
+    803a:	69fb      	ldr	r3, [r7, #28]
+    803c:	4413      	add	r3, r2
+    803e:	3b01      	subs	r3, #1
+    8040:	617b      	str	r3, [r7, #20]
+    8042:	69bb      	ldr	r3, [r7, #24]
+    8044:	2b00      	cmp	r3, #0
+    8046:	db28      	blt.n	809a <depthwise_channel+0x9a>
+    8048:	69bb      	ldr	r3, [r7, #24]
+    804a:	2b0d      	cmp	r3, #13
+    804c:	dc25      	bgt.n	809a <depthwise_channel+0x9a>
+    804e:	697b      	ldr	r3, [r7, #20]
+    8050:	2b00      	cmp	r3, #0
+    8052:	db22      	blt.n	809a <depthwise_channel+0x9a>
+    8054:	697b      	ldr	r3, [r7, #20]
+    8056:	2b0d      	cmp	r3, #13
+    8058:	dc1f      	bgt.n	809a <depthwise_channel+0x9a>
+    805a:	69ba      	ldr	r2, [r7, #24]
+    805c:	4613      	mov	r3, r2
+    805e:	00db      	lsls	r3, r3, #3
+    8060:	1a9b      	subs	r3, r3, r2
+    8062:	005b      	lsls	r3, r3, #1
+    8064:	461a      	mov	r2, r3
+    8066:	697b      	ldr	r3, [r7, #20]
+    8068:	4413      	add	r3, r2
+    806a:	009b      	lsls	r3, r3, #2
+    806c:	68fa      	ldr	r2, [r7, #12]
+    806e:	4413      	add	r3, r2
+    8070:	6818      	ldr	r0, [r3, #0]
+    8072:	6a3a      	ldr	r2, [r7, #32]
+    8074:	4613      	mov	r3, r2
+    8076:	005b      	lsls	r3, r3, #1
+    8078:	441a      	add	r2, r3
+    807a:	69fb      	ldr	r3, [r7, #28]
+    807c:	4413      	add	r3, r2
+    807e:	009b      	lsls	r3, r3, #2
+    8080:	68ba      	ldr	r2, [r7, #8]
+    8082:	4413      	add	r3, r2
+    8084:	681b      	ldr	r3, [r3, #0]
+    8086:	4619      	mov	r1, r3
+    8088:	f000 f830 	bl	80ec <__aeabi_fmul>
+    808c:	4603      	mov	r3, r0
+    808e:	4619      	mov	r1, r3
+    8090:	6a78      	ldr	r0, [r7, #36]	@ 0x24
+    8092:	f000 f8e5 	bl	8260 <__addsf3>
+    8096:	4603      	mov	r3, r0
+    8098:	627b      	str	r3, [r7, #36]	@ 0x24
+    809a:	69fb      	ldr	r3, [r7, #28]
+    809c:	3301      	adds	r3, #1
+    809e:	61fb      	str	r3, [r7, #28]
+    80a0:	69fb      	ldr	r3, [r7, #28]
+    80a2:	2b02      	cmp	r3, #2
+    80a4:	ddc1      	ble.n	802a <depthwise_channel+0x2a>
+    80a6:	6a3b      	ldr	r3, [r7, #32]
+    80a8:	3301      	adds	r3, #1
+    80aa:	623b      	str	r3, [r7, #32]
+    80ac:	6a3b      	ldr	r3, [r7, #32]
+    80ae:	2b02      	cmp	r3, #2
+    80b0:	ddb8      	ble.n	8024 <depthwise_channel+0x24>
+    80b2:	6afa      	ldr	r2, [r7, #44]	@ 0x2c
+    80b4:	4613      	mov	r3, r2
+    80b6:	00db      	lsls	r3, r3, #3
+    80b8:	1a9a      	subs	r2, r3, r2
+    80ba:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+    80bc:	4413      	add	r3, r2
+    80be:	009b      	lsls	r3, r3, #2
+    80c0:	687a      	ldr	r2, [r7, #4]
+    80c2:	4413      	add	r3, r2
+    80c4:	6a7a      	ldr	r2, [r7, #36]	@ 0x24
+    80c6:	601a      	str	r2, [r3, #0]
+    80c8:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+    80ca:	3301      	adds	r3, #1
+    80cc:	62bb      	str	r3, [r7, #40]	@ 0x28
+    80ce:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+    80d0:	2b06      	cmp	r3, #6
+    80d2:	dda1      	ble.n	8018 <depthwise_channel+0x18>
+    80d4:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+    80d6:	3301      	adds	r3, #1
+    80d8:	62fb      	str	r3, [r7, #44]	@ 0x2c
+    80da:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+    80dc:	2b06      	cmp	r3, #6
+    80de:	dd98      	ble.n	8012 <depthwise_channel+0x12>
+    80e0:	bf00      	nop
+    80e2:	bf00      	nop
+    80e4:	3730      	adds	r7, #48	@ 0x30
+    80e6:	46bd      	mov	sp, r7
+    80e8:	bd80      	pop	{r7, pc}
+
+
+=== __aeabi_fmul ===
+
+linux-inference/depthwise_wcet_arm.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+000080ec <__aeabi_fmul>:
+    80ec:	f04f 0cff 	mov.w	ip, #255	@ 0xff
+    80f0:	ea1c 52d0 	ands.w	r2, ip, r0, lsr #23
+    80f4:	bf1e      	ittt	ne
+    80f6:	ea1c 53d1 	andsne.w	r3, ip, r1, lsr #23
+    80fa:	ea92 0f0c 	teqne	r2, ip
+    80fe:	ea93 0f0c 	teqne	r3, ip
+    8102:	d06f      	beq.n	81e4 <__aeabi_fmul+0xf8>
+    8104:	441a      	add	r2, r3
+    8106:	ea80 0c01 	eor.w	ip, r0, r1
+    810a:	0240      	lsls	r0, r0, #9
+    810c:	bf18      	it	ne
+    810e:	ea5f 2141 	movsne.w	r1, r1, lsl #9
+    8112:	d01e      	beq.n	8152 <__aeabi_fmul+0x66>
+    8114:	f04f 6300 	mov.w	r3, #134217728	@ 0x8000000
+    8118:	ea43 1050 	orr.w	r0, r3, r0, lsr #5
+    811c:	ea43 1151 	orr.w	r1, r3, r1, lsr #5
+    8120:	fba0 3101 	umull	r3, r1, r0, r1
+    8124:	f00c 4000 	and.w	r0, ip, #2147483648	@ 0x80000000
+    8128:	f5b1 0f00 	cmp.w	r1, #8388608	@ 0x800000
+    812c:	bf3e      	ittt	cc
+    812e:	0049      	lslcc	r1, r1, #1
+    8130:	ea41 71d3 	orrcc.w	r1, r1, r3, lsr #31
+    8134:	005b      	lslcc	r3, r3, #1
+    8136:	ea40 0001 	orr.w	r0, r0, r1
+    813a:	f162 027f 	sbc.w	r2, r2, #127	@ 0x7f
+    813e:	2afd      	cmp	r2, #253	@ 0xfd
+    8140:	d81d      	bhi.n	817e <__aeabi_fmul+0x92>
+    8142:	f1b3 4f00 	cmp.w	r3, #2147483648	@ 0x80000000
+    8146:	eb40 50c2 	adc.w	r0, r0, r2, lsl #23
+    814a:	bf08      	it	eq
+    814c:	f020 0001 	biceq.w	r0, r0, #1
+    8150:	4770      	bx	lr
+    8152:	f090 0f00 	teq	r0, #0
+    8156:	f00c 4c00 	and.w	ip, ip, #2147483648	@ 0x80000000
+    815a:	bf08      	it	eq
+    815c:	0249      	lsleq	r1, r1, #9
+    815e:	ea4c 2050 	orr.w	r0, ip, r0, lsr #9
+    8162:	ea40 2051 	orr.w	r0, r0, r1, lsr #9
+    8166:	3a7f      	subs	r2, #127	@ 0x7f
+    8168:	bfc2      	ittt	gt
+    816a:	f1d2 03ff 	rsbsgt	r3, r2, #255	@ 0xff
+    816e:	ea40 50c2 	orrgt.w	r0, r0, r2, lsl #23
+    8172:	4770      	bxgt	lr
+    8174:	f440 0000 	orr.w	r0, r0, #8388608	@ 0x800000
+    8178:	f04f 0300 	mov.w	r3, #0
+    817c:	3a01      	subs	r2, #1
+    817e:	dc5d      	bgt.n	823c <__aeabi_fmul+0x150>
+    8180:	f112 0f19 	cmn.w	r2, #25
+    8184:	bfdc      	itt	le
+    8186:	f000 4000 	andle.w	r0, r0, #2147483648	@ 0x80000000
+    818a:	4770      	bxle	lr
+    818c:	f1c2 0200 	rsb	r2, r2, #0
+    8190:	0041      	lsls	r1, r0, #1
+    8192:	fa21 f102 	lsr.w	r1, r1, r2
+    8196:	f1c2 0220 	rsb	r2, r2, #32
+    819a:	fa00 fc02 	lsl.w	ip, r0, r2
+    819e:	ea5f 0031 	movs.w	r0, r1, rrx
+    81a2:	f140 0000 	adc.w	r0, r0, #0
+    81a6:	ea53 034c 	orrs.w	r3, r3, ip, lsl #1
+    81aa:	bf08      	it	eq
+    81ac:	ea20 70dc 	biceq.w	r0, r0, ip, lsr #31
+    81b0:	4770      	bx	lr
+    81b2:	f092 0f00 	teq	r2, #0
+    81b6:	f000 4c00 	and.w	ip, r0, #2147483648	@ 0x80000000
+    81ba:	bf02      	ittt	eq
+    81bc:	0040      	lsleq	r0, r0, #1
+    81be:	f410 0f00 	tsteq.w	r0, #8388608	@ 0x800000
+    81c2:	3a01      	subeq	r2, #1
+    81c4:	d0f9      	beq.n	81ba <__aeabi_fmul+0xce>
+    81c6:	ea40 000c 	orr.w	r0, r0, ip
+    81ca:	f093 0f00 	teq	r3, #0
+    81ce:	f001 4c00 	and.w	ip, r1, #2147483648	@ 0x80000000
+    81d2:	bf02      	ittt	eq
+    81d4:	0049      	lsleq	r1, r1, #1
+    81d6:	f411 0f00 	tsteq.w	r1, #8388608	@ 0x800000
+    81da:	3b01      	subeq	r3, #1
+    81dc:	d0f9      	beq.n	81d2 <__aeabi_fmul+0xe6>
+    81de:	ea41 010c 	orr.w	r1, r1, ip
+    81e2:	e78f      	b.n	8104 <__aeabi_fmul+0x18>
+    81e4:	ea0c 53d1 	and.w	r3, ip, r1, lsr #23
+    81e8:	ea92 0f0c 	teq	r2, ip
+    81ec:	bf18      	it	ne
+    81ee:	ea93 0f0c 	teqne	r3, ip
+    81f2:	d00a      	beq.n	820a <__aeabi_fmul+0x11e>
+    81f4:	f030 4c00 	bics.w	ip, r0, #2147483648	@ 0x80000000
+    81f8:	bf18      	it	ne
+    81fa:	f031 4c00 	bicsne.w	ip, r1, #2147483648	@ 0x80000000
+    81fe:	d1d8      	bne.n	81b2 <__aeabi_fmul+0xc6>
+    8200:	ea80 0001 	eor.w	r0, r0, r1
+    8204:	f000 4000 	and.w	r0, r0, #2147483648	@ 0x80000000
+    8208:	4770      	bx	lr
+    820a:	f090 0f00 	teq	r0, #0
+    820e:	bf17      	itett	ne
+    8210:	f090 4f00 	teqne	r0, #2147483648	@ 0x80000000
+    8214:	4608      	moveq	r0, r1
+    8216:	f091 0f00 	teqne	r1, #0
+    821a:	f091 4f00 	teqne	r1, #2147483648	@ 0x80000000
+    821e:	d014      	beq.n	824a <__aeabi_fmul+0x15e>
+    8220:	ea92 0f0c 	teq	r2, ip
+    8224:	d101      	bne.n	822a <__aeabi_fmul+0x13e>
+    8226:	0242      	lsls	r2, r0, #9
+    8228:	d10f      	bne.n	824a <__aeabi_fmul+0x15e>
+    822a:	ea93 0f0c 	teq	r3, ip
+    822e:	d103      	bne.n	8238 <__aeabi_fmul+0x14c>
+    8230:	024b      	lsls	r3, r1, #9
+    8232:	bf18      	it	ne
+    8234:	4608      	movne	r0, r1
+    8236:	d108      	bne.n	824a <__aeabi_fmul+0x15e>
+    8238:	ea80 0001 	eor.w	r0, r0, r1
+    823c:	f000 4000 	and.w	r0, r0, #2147483648	@ 0x80000000
+    8240:	f040 40fe 	orr.w	r0, r0, #2130706432	@ 0x7f000000
+    8244:	f440 0000 	orr.w	r0, r0, #8388608	@ 0x800000
+    8248:	4770      	bx	lr
+    824a:	f040 40fe 	orr.w	r0, r0, #2130706432	@ 0x7f000000
+    824e:	f440 0040 	orr.w	r0, r0, #12582912	@ 0xc00000
+    8252:	4770      	bx	lr
+
+
+=== __aeabi_fadd ===
+
+linux-inference/depthwise_wcet_arm.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:

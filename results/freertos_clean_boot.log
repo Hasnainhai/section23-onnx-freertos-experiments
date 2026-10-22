@@ -1,0 +1,25 @@
+Timer with period zero, disabling
+Starting FreeRTOS on QEMU Cortex-M3
+Starting FreeRTOS scheduler
+FreeRTOS binary packet receiver ready
+=== DEADLINE_DIAGNOSTIC_BEGIN ===
+T1 expected=1 start=1 finish=1 systick_start=11640 systick_finish=10793
+T1 expected=101 start=101 finish=101 systick_start=47986 systick_finish=47964
+T1 expected=201 start=201 finish=201 systick_start=48906 systick_finish=48886
+T1 expected=301 start=301 finish=301 systick_start=49210 systick_finish=49186
+T1 expected=401 start=401 finish=401 systick_start=49314 systick_finish=49292
+T1 expected=501 start=501 finish=501 systick_start=49281 systick_finish=49259
+T1 expected=601 start=601 finish=601 systick_start=49311 systick_finish=49290
+T1 expected=701 start=701 finish=701 systick_start=48347 systick_finish=48308
+T1 expected=801 start=801 finish=801 systick_start=48914 systick_finish=48891
+T1 expected=901 start=901 finish=901 systick_start=48867 systick_finish=48847
+T1 expected=1001 start=1001 finish=1001 systick_start=49304 systick_finish=49290
+T1 expected=1101 start=1101 finish=1101 systick_start=49269 systick_finish=49247
+T2 expected=2 start=2 finish=2 systick_start=31164 systick_finish=29862
+T2 expected=252 start=252 finish=252 systick_start=48878 systick_finish=48862
+T2 expected=502 start=502 finish=502 systick_start=49327 systick_finish=49312
+T2 expected=752 start=752 finish=752 systick_start=47978 systick_finish=47945
+T2 expected=1002 start=1002 finish=1002 systick_start=49313 systick_finish=49301
+T2 expected=1252 start=1252 finish=1252 systick_start=48889 systick_finish=48874
+=== DEADLINE_DIAGNOSTIC_END ===
+STACK_FREE_WORDS Task1=185 Task2=157 UART=207

@@ -1,0 +1,4 @@
+Model: linux-inference/models/mobilenetv2-12.onnx
+Specialized input: [1, 3, 224, 224]
+Output: [1, 1000]
+

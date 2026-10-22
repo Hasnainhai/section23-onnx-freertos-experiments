@@ -1,0 +1,11 @@
+ARM CONVOLUTION INSTRUCTION VISITS
+Firmware: inference_timercheck.elf
+Function instruction visits: 28071
+Multiplication calls: 400
+Addition calls: 400
+Output stores: 49
+Backward branch counts: 441, 147, 49, 7
+Includes BL call instructions.
+Excludes floating-point helper bodies.
+Fixed-loop/padding control-flow model.
+Not hardware WCET.

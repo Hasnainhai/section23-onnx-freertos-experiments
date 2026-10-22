@@ -1,0 +1,58 @@
+Timer with period zero, disabling
+Starting FreeRTOS on QEMU Cortex-M3
+Starting FreeRTOS scheduler
+FreeRTOS binary packet receiver ready
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+STACK_FREE_WORDS Task1=221 Task2=159 UART=221
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+=== DEADLINE_DIAGNOSTIC_BEGIN ===
+T1 expected=0 start=0 finish=0
+T1 expected=100 start=100 finish=100
+T1 expected=200 start=200 finish=200
+T1 expected=300 start=300 finish=300
+T1 expected=400 start=400 finish=400
+T1 expected=500 start=500 finish=500
+T1 expected=600 start=600 finish=600
+T1 expected=700 start=700 finish=700
+T1 expected=800 start=800 finish=800
+T1 expected=900 start=900 finish=900
+T1 expected=1000 start=1000 finish=1000
+T1 expected=1100 start=1100 finish=1100
+T2 expected=0 start=0 finish=0
+T2 expected=250 start=250 finish=250
+T2 expected=500 start=500 finish=500
+T2 expected=750 start=750 finish=750
+T2 expected=1000 start=1000 finish=1000
+T2 expected=1250 start=1250 finish=1250
+=== DEADLINE_DIAGNOSTIC_END ===
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+STACK_FREE_WORDS Task1=207 Task2=159 UART=221
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running

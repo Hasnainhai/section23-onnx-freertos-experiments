@@ -1,0 +1,23 @@
+=== AC-POWERED CPU TIMING DIAGNOSTIC ===
+Execution device: ['CPU']
+Jobs per phase: 50
+Warm-up runs: 20
+
+=== CONTINUOUS BEFORE ===
+Mean inference: 4.447 ms
+Median inference: 4.390 ms
+Maximum inference: 5.384 ms
+
+=== PERIODIC INFERENCE ===
+Mean inference: 13.328 ms
+Median inference: 14.667 ms
+Maximum inference: 20.364 ms
+Maximum response: 20.561 ms
+Deadline misses: 4 / 50
+
+=== CONTINUOUS AFTER ===
+Mean inference: 5.718 ms
+Median inference: 4.196 ms
+Maximum inference: 14.260 ms
+
+AC-POWERED DIAGNOSTIC: COMPLETED

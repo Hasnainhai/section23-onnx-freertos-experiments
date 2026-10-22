@@ -1,0 +1,20 @@
+ARM OPTIMIZED CODE VERIFICATION
+Original ELF: freertos-qemu/build_inference_test/inference_test.elf
+Original SHA256: be4b22ae0f2fb2b637fabafdd23ae65d69e2c11f7d142842cc6c2fc37130f44e
+Optimized ELF: freertos-qemu/build_inference_stackopt/inference_stackopt.elf
+Optimized SHA256: 2f4418ed256fa2c44be360362e708d842f02c6cd7eab8f381a1f1be895865315
+
+Observed code comparison (Steps 250-252):
+Convolution instruction locations: 114 in each firmware
+Matching convolution encodings: 112 / 114
+Differences: two relocated BL helper calls
+__aeabi_fmul: 116 instructions, identical encodings
+__addsf3: 120 instructions, identical encodings
+
+Optimized inference validation: all 49 outputs PASS
+Verified linked static RAM saving: 1024 bytes
+
+ANALYSIS LIMITATION:
+Static instruction-path model is conditional.
+No validated processor cycle or hardware WCET bound.
+RESULT: PASS

@@ -1,0 +1,11 @@
+ISOLATED ARM INFERENCE EXECUTION TRACE
+Firmware: inference_test.elf
+Call boundary: 0x00b4
+Return boundary: 0x00b8
+Convolution entries: 28084
+Multiplication entries: 12804
+Addition entries: 19145
+Other interval entries: 1676
+Combined region entries: 60033
+QEMU one-instruction-per-TB trace.
+Not hardware cycles or WCET.

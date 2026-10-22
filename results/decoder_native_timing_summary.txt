@@ -1,0 +1,26 @@
+=== NATIVE PACKET DECODER TIMING ===
+Clock: CLOCK_MONOTONIC
+Batches per case: 200
+Calls per batch: 2000
+
+Case: valid
+Correctness check: PASS
+Minimum batch average: 42.74 ns/call
+Mean of batch averages: 70.05 ns/call
+Maximum batch average: 175.78 ns/call
+
+Case: bad_checksum
+Correctness check: PASS
+Minimum batch average: 34.10 ns/call
+Mean of batch averages: 35.66 ns/call
+Maximum batch average: 59.69 ns/call
+
+Case: invalid_class
+Correctness check: PASS
+Minimum batch average: 42.42 ns/call
+Mean of batch averages: 59.27 ns/call
+Maximum batch average: 93.82 ns/call
+
+Correctness checks: ALL PASS
+Timing CSV: results/decoder_native_timing.csv
+Result checksum: 400000

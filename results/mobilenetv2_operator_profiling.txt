@@ -1,0 +1,62 @@
+Available OpenVINO devices: ['CPU', 'GPU']
+
+=== DEVICE: CPU ===
+Compiled device: ['CPU']
+Profiling records: 108
+Records with nonzero real_time: 57
+
+=== PROFILED OPERATOR TYPES ===
+Convolution               count=35    summed_real_time_ms=4.2620
+GroupConvolution          count=15    summed_real_time_ms=0.7720
+Reorder                   count=5     summed_real_time_ms=0.3440
+FullyConnected            count=1     summed_real_time_ms=0.3350
+ReduceMean                count=1     summed_real_time_ms=0.0320
+
+=== TEN LONGEST PROFILED OPERATIONS ===
+   0.3720 ms  Convolution          backend=jit_avx2_dw_1x1_f32 name=Conv_5/WithoutBiases
+   0.3350 ms  FullyConnected       backend=gemm_mlas_f32 name=output
+   0.3220 ms  Convolution          backend=jit_avx2_dw_1x1_f32 name=Conv_10/WithoutBiases
+   0.3120 ms  Convolution          backend=brgconv_avx2_f32 name=Conv_0/WithoutBiases
+   0.2650 ms  Convolution          backend=brgconv_avx2_1x1_f32 name=Conv_95/WithoutBiases
+   0.2100 ms  GroupConvolution     backend=brgconv_avx2_dw_f32 name=Conv_2/WithoutBiases
+   0.2100 ms  Convolution          backend=brgconv_avx2_1x1_f32 name=Conv_94/WithoutBiases
+   0.1460 ms  Convolution          backend=brgconv_avx2_1x1_f32 name=Conv_71/WithoutBiases
+   0.1460 ms  Convolution          backend=brgconv_avx2_1x1_f32 name=Conv_16/WithoutBiases
+   0.1430 ms  Convolution          backend=brgconv_avx2_1x1_f32 name=Conv_65/WithoutBiases
+
+DEVICE PROFILING COMPLETED: CPU
+
+=== DEVICE: GPU ===
+Compiled device: ['GPU.0']
+Profiling records: 159
+Records with nonzero real_time: 56
+
+=== PROFILED OPERATOR TYPES ===
+Convolution               count=52    summed_real_time_ms=3.6400
+FullyConnected            count=1     summed_real_time_ms=0.2090
+Convert                   count=1     summed_real_time_ms=0.0800
+ReduceMean                count=1     summed_real_time_ms=0.0160
+Result                    count=1     summed_real_time_ms=0.0040
+
+=== TEN LONGEST PROFILED OPERATIONS ===
+   0.2090 ms  FullyConnected       backend=fully_connected_gpu_bs_f_bsv16_b1__f16 name=Gemm_104/WithoutBiases
+   0.1950 ms  Convolution          backend=convolution_gpu_bfyx_to_bfyx_f16__f16 name=Conv_0/WithoutBiases
+   0.1740 ms  Convolution          backend=convolution_gpu_bfyx_f16__f16 name=Conv_5/WithoutBiases
+   0.1620 ms  Convolution          backend=convolution_gpu_bfyx_f16__f16 name=Conv_95/WithoutBiases
+   0.1390 ms  Convolution          backend=convolution_gpu_bfyx_f16__f16 name=Conv_14/WithoutBiases
+   0.1370 ms  Convolution          backend=convolution_gpu_bfyx_f16__f16 name=Conv_16/WithoutBiases
+   0.1360 ms  Convolution          backend=convolution_gpu_bfyx_f16__f16 name=Conv_10/WithoutBiases
+   0.1330 ms  Convolution          backend=convolution_gpu_bfyx_f16_depthwise__f16 name=Conv_7/WithoutBiases
+   0.1190 ms  Convolution          backend=convolution_gpu_bfyx_f16__f16 name=Conv_94/WithoutBiases
+   0.1080 ms  Convolution          backend=convolution_gpu_bfyx_f16__f16 name=Conv_73/WithoutBiases
+
+DEVICE PROFILING COMPLETED: GPU
+
+=== INTERPRETATION LIMITATIONS ===
+These are OpenVINO instrumented execution observations.
+Backend fusion can change how ONNX graph operators appear in profiling results.
+Summed operator times may not equal end-to-end latency because operations can overlap or contain backend overhead.
+Profiling overhead may affect measured times.
+These measurements are NOT static or formal WCET bounds.
+
+OPERATION PROFILING ANALYSIS FINISHED

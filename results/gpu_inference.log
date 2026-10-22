@@ -1,0 +1,15 @@
+=== GPU INFERENCE TEST ===
+Model exists: True
+Available devices: ['CPU', 'GPU']
+
+=== COMPILING MODEL FOR GPU ===
+Execution device: ['GPU.0']
+
+=== RUNNING GPU INFERENCE ===
+Output shape: (1, 1000)
+Output dtype: float32
+All values finite: True
+Predicted class index: 892
+Highest output score: 5.72265625
+
+GPU INFERENCE TEST: PASS

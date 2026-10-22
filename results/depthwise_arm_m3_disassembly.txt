@@ -1,0 +1,121 @@
+
+linux-inference/depthwise_channel_arm_m3.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <depthwise_channel>:
+   0:	b580      	push	{r7, lr}
+   2:	b08c      	sub	sp, #48	@ 0x30
+   4:	af00      	add	r7, sp, #0
+   6:	60f8      	str	r0, [r7, #12]
+   8:	60b9      	str	r1, [r7, #8]
+   a:	607a      	str	r2, [r7, #4]
+   c:	2300      	movs	r3, #0
+   e:	62fb      	str	r3, [r7, #44]	@ 0x2c
+  10:	e063      	b.n	da <depthwise_channel+0xda>
+  12:	2300      	movs	r3, #0
+  14:	62bb      	str	r3, [r7, #40]	@ 0x28
+  16:	e05a      	b.n	ce <depthwise_channel+0xce>
+  18:	f04f 0300 	mov.w	r3, #0
+  1c:	627b      	str	r3, [r7, #36]	@ 0x24
+  1e:	2300      	movs	r3, #0
+  20:	623b      	str	r3, [r7, #32]
+  22:	e043      	b.n	ac <depthwise_channel+0xac>
+  24:	2300      	movs	r3, #0
+  26:	61fb      	str	r3, [r7, #28]
+  28:	e03a      	b.n	a0 <depthwise_channel+0xa0>
+  2a:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+  2c:	005a      	lsls	r2, r3, #1
+  2e:	6a3b      	ldr	r3, [r7, #32]
+  30:	4413      	add	r3, r2
+  32:	3b01      	subs	r3, #1
+  34:	61bb      	str	r3, [r7, #24]
+  36:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+  38:	005a      	lsls	r2, r3, #1
+  3a:	69fb      	ldr	r3, [r7, #28]
+  3c:	4413      	add	r3, r2
+  3e:	3b01      	subs	r3, #1
+  40:	617b      	str	r3, [r7, #20]
+  42:	69bb      	ldr	r3, [r7, #24]
+  44:	2b00      	cmp	r3, #0
+  46:	db28      	blt.n	9a <depthwise_channel+0x9a>
+  48:	69bb      	ldr	r3, [r7, #24]
+  4a:	2b0d      	cmp	r3, #13
+  4c:	dc25      	bgt.n	9a <depthwise_channel+0x9a>
+  4e:	697b      	ldr	r3, [r7, #20]
+  50:	2b00      	cmp	r3, #0
+  52:	db22      	blt.n	9a <depthwise_channel+0x9a>
+  54:	697b      	ldr	r3, [r7, #20]
+  56:	2b0d      	cmp	r3, #13
+  58:	dc1f      	bgt.n	9a <depthwise_channel+0x9a>
+  5a:	69ba      	ldr	r2, [r7, #24]
+  5c:	4613      	mov	r3, r2
+  5e:	00db      	lsls	r3, r3, #3
+  60:	1a9b      	subs	r3, r3, r2
+  62:	005b      	lsls	r3, r3, #1
+  64:	461a      	mov	r2, r3
+  66:	697b      	ldr	r3, [r7, #20]
+  68:	4413      	add	r3, r2
+  6a:	009b      	lsls	r3, r3, #2
+  6c:	68fa      	ldr	r2, [r7, #12]
+  6e:	4413      	add	r3, r2
+  70:	6818      	ldr	r0, [r3, #0]
+  72:	6a3a      	ldr	r2, [r7, #32]
+  74:	4613      	mov	r3, r2
+  76:	005b      	lsls	r3, r3, #1
+  78:	441a      	add	r2, r3
+  7a:	69fb      	ldr	r3, [r7, #28]
+  7c:	4413      	add	r3, r2
+  7e:	009b      	lsls	r3, r3, #2
+  80:	68ba      	ldr	r2, [r7, #8]
+  82:	4413      	add	r3, r2
+  84:	681b      	ldr	r3, [r3, #0]
+  86:	4619      	mov	r1, r3
+  88:	f7ff fffe 	bl	0 <__aeabi_fmul>
+  8c:	4603      	mov	r3, r0
+  8e:	4619      	mov	r1, r3
+  90:	6a78      	ldr	r0, [r7, #36]	@ 0x24
+  92:	f7ff fffe 	bl	0 <__aeabi_fadd>
+  96:	4603      	mov	r3, r0
+  98:	627b      	str	r3, [r7, #36]	@ 0x24
+  9a:	69fb      	ldr	r3, [r7, #28]
+  9c:	3301      	adds	r3, #1
+  9e:	61fb      	str	r3, [r7, #28]
+  a0:	69fb      	ldr	r3, [r7, #28]
+  a2:	2b02      	cmp	r3, #2
+  a4:	ddc1      	ble.n	2a <depthwise_channel+0x2a>
+  a6:	6a3b      	ldr	r3, [r7, #32]
+  a8:	3301      	adds	r3, #1
+  aa:	623b      	str	r3, [r7, #32]
+  ac:	6a3b      	ldr	r3, [r7, #32]
+  ae:	2b02      	cmp	r3, #2
+  b0:	ddb8      	ble.n	24 <depthwise_channel+0x24>
+  b2:	6afa      	ldr	r2, [r7, #44]	@ 0x2c
+  b4:	4613      	mov	r3, r2
+  b6:	00db      	lsls	r3, r3, #3
+  b8:	1a9a      	subs	r2, r3, r2
+  ba:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+  bc:	4413      	add	r3, r2
+  be:	009b      	lsls	r3, r3, #2
+  c0:	687a      	ldr	r2, [r7, #4]
+  c2:	4413      	add	r3, r2
+  c4:	6a7a      	ldr	r2, [r7, #36]	@ 0x24
+  c6:	601a      	str	r2, [r3, #0]
+  c8:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+  ca:	3301      	adds	r3, #1
+  cc:	62bb      	str	r3, [r7, #40]	@ 0x28
+  ce:	6abb      	ldr	r3, [r7, #40]	@ 0x28
+  d0:	2b06      	cmp	r3, #6
+  d2:	dda1      	ble.n	18 <depthwise_channel+0x18>
+  d4:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+  d6:	3301      	adds	r3, #1
+  d8:	62fb      	str	r3, [r7, #44]	@ 0x2c
+  da:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+  dc:	2b06      	cmp	r3, #6
+  de:	dd98      	ble.n	12 <depthwise_channel+0x12>
+  e0:	bf00      	nop
+  e2:	bf00      	nop
+  e4:	3730      	adds	r7, #48	@ 0x30
+  e6:	46bd      	mov	sp, r7
+  e8:	bd80      	pop	{r7, pc}

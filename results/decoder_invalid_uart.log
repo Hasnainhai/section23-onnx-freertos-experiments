@@ -1,0 +1,18 @@
+Timer with period zero, disabling
+Starting FreeRTOS on QEMU Cortex-M3
+Starting FreeRTOS scheduler
+FreeRTOS binary packet receiver ready
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS packet rejected
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+qemu-system-arm: terminating on signal 15 from pid 51298 (python3)

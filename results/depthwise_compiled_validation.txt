@@ -1,0 +1,5 @@
+Layer: Conv_75/WithoutBiases
+Real model weights: YES
+Output values checked: 49
+Maximum absolute error: 2.38418579e-07
+COMPILED DEPTHWISE VALIDATION: PASS

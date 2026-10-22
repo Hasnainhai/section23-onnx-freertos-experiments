@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+width="1200" height="790" viewBox="0 0 1200 790">
+
+<rect width="1200" height="790" fill="#ffffff"/>
+
+<text x="600" y="55" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="28"
+font-weight="bold" fill="#172b4d">
+Initial ONNX and FreeRTOS Inference Experiments
+</text>
+
+<text x="600" y="85" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="16" fill="#52637a">
+Two separate experiments on a Linux PC and an emulated ARM Cortex-M3
+</text>
+
+<!-- EXPERIMENT A -->
+<rect x="65" y="120" width="1070" height="340"
+rx="18" fill="#f4f8fc" stroke="#c8d8ea" stroke-width="2"/>
+
+<text x="95" y="158"
+font-family="DejaVu Sans,Arial" font-size="22"
+font-weight="bold" fill="#173a63">
+Experiment A - Full-network inference and communication
+</text>
+
+<rect x="130" y="190" width="940" height="85"
+rx="12" fill="#dcecfb" stroke="#5686b6" stroke-width="2"/>
+
+<text x="600" y="225" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="21"
+font-weight="bold" fill="#173a63">
+Linux PC - OpenVINO + MobileNetV2 ONNX
+</text>
+
+<text x="600" y="253" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="17" fill="#29496a">
+Full-model inference on Intel CPU or integrated GPU
+</text>
+
+<line x1="600" y1="275" x2="600" y2="329"
+stroke="#356895" stroke-width="3"/>
+<polygon points="590,317 610,317 600,334" fill="#356895"/>
+
+<text x="750" y="307" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="15" fill="#45576a">
+12-byte inference-result packet
+</text>
+
+<rect x="130" y="345" width="940" height="85"
+rx="12" fill="#e4f3ec" stroke="#57967a" stroke-width="2"/>
+
+<text x="600" y="380" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="21"
+font-weight="bold" fill="#205e45">
+QEMU Cortex-M3 + FreeRTOS
+</text>
+
+<text x="600" y="408" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="17" fill="#32634f">
+Emulated UART receives and validates Linux inference results
+</text>
+
+<!-- EXPERIMENT B -->
+<rect x="65" y="485" width="1070" height="235"
+rx="18" fill="#faf7f0" stroke="#decda9" stroke-width="2"/>
+
+<text x="95" y="523"
+font-family="DejaVu Sans,Arial" font-size="22"
+font-weight="bold" fill="#725123">
+Experiment B - Isolated embedded convolution
+</text>
+
+<rect x="115" y="555" width="440" height="100"
+rx="12" fill="#f5e7c9" stroke="#b59151" stroke-width="2"/>
+
+<text x="335" y="589" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="18"
+font-weight="bold" fill="#725123">
+MobileNetV2 depthwise layer
+</text>
+
+<text x="335" y="620" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="16" fill="#725123">
+One channel: input and weights
+</text>
+
+<line x1="555" y1="605" x2="645" y2="605"
+stroke="#a07838" stroke-width="3"/>
+<polygon points="633,595 633,615 651,605" fill="#a07838"/>
+
+<rect x="655" y="555" width="430" height="100"
+rx="12" fill="#e4f3ec" stroke="#57967a" stroke-width="2"/>
+
+<text x="870" y="589" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="18"
+font-weight="bold" fill="#205e45">
+QEMU Cortex-M3 + FreeRTOS
+</text>
+
+<text x="870" y="618" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="15" fill="#205e45">
+49/49 outputs verified
+</text>
+
+<text x="600" y="690" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="15" fill="#725123">
+Static RAM optimized from 3,160 to 2,136 bytes (32.4% saving)
+</text>
+
+<text x="600" y="756" text-anchor="middle"
+font-family="DejaVu Sans,Arial" font-size="15" fill="#687385">
+Full MobileNetV2 runs on Linux; only the isolated channel runs on ARM FreeRTOS.
+</text>
+
+</svg>

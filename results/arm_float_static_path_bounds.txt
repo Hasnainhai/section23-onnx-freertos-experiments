@@ -1,0 +1,19 @@
+ARM FLOATING-POINT STATIC PATH ANALYSIS
+Firmware: inference_timercheck.elf
+Method: conservative control-flow exploration
+Normalization-loop back-edge allowance: 23 each
+Conditional IT-block instruction slots counted
+
+Multiplication helper bound: 299
+Addition helper bound: 67
+Multiplication calls per channel: 400
+Addition calls per channel: 400
+Combined helper instruction-visit bound: 146400
+
+SCOPE AND LIMITATIONS:
+Conservative model subject to validated loop-entry
+and termination assumptions.
+Excludes calling convolution function instructions.
+Excludes interrupt and FreeRTOS scheduling work.
+Does not include processor cycle or memory timing.
+Not a certified hardware WCET.

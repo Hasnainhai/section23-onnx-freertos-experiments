@@ -1,0 +1,40 @@
+=== ARM INFERENCE SYSTICK ANALYSIS ===
+Configured clock: 50000000 Hz
+Configured tick rate: 1000 Hz
+Assumed counter period: 50000 units
+Samples: 16
+
+Sample | Tick crossings | Counter delta
+     1 |              0 |         35319
+     2 |              1 |         23575
+     3 |              0 |          8891
+     4 |              0 |          7967
+     5 |              0 |          8532
+     6 |              1 |          9991
+     7 |              0 |          7657
+     8 |              0 |          8040
+     9 |              0 |          7825
+    10 |              0 |          7816
+    11 |              0 |          5327
+    12 |              0 |          3707
+    13 |              1 |          6351
+    14 |              0 |          4090
+    15 |              0 |          3709
+    16 |              0 |          4045
+
+Minimum observed delta: 3707
+Median observed delta: 7820.5
+Mean observed delta: 9552.62
+Maximum observed delta: 35319
+Samples crossing a tick: 3
+
+INTERPRETATION:
+Values are reconstructed SysTick counter differences
+using the configured nominal counter period.
+The actual QEMU SysTick reload has not been read back.
+Do not equate these values with retired instructions.
+Do not convert them into physical execution time
+without a validated clock and emulator timing model.
+These are NOT guaranteed hardware WCET bounds.
+
+STEP 178 ANALYSIS: PASS

@@ -1,0 +1,22 @@
+=== SELECTED INFERENCE LAYER ===
+Layer: Conv_75/WithoutBiases
+Real trained model weights: YES
+Input: 1 x 576 x 14 x 14
+Output: 1 x 576 x 7 x 7
+Kernel: 3 x 3
+Stride: 2
+Padding: 1
+
+=== CHANNEL 0 VALIDATION ===
+Output values compared: 49
+Nominal kernel positions: 441
+Actual in-bounds multiplications: 400
+Maximum absolute difference: 2.384185791015625e-07
+OpenVINO sample output: [-0.917211651802063, -1.069791316986084, -1.15355384349823, -0.9858265519142151]
+Manual sample output: [-0.917211651802063, -1.069791316986084, -1.15355384349823, -0.9858266115188599]
+
+REAL DEPTHWISE CONVOLUTION VALIDATION: PASS
+
+LIMITATION:
+This validates an isolated layer using real model weights and a synthetic intermediate input.
+No static WCET claim is made by this correctness test.

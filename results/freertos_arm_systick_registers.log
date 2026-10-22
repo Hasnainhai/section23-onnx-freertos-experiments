@@ -1,0 +1,25 @@
+Timer with period zero, disabling
+Starting isolated ARM inference experiment
+Starting FreeRTOS scheduler
+FreeRTOS ARM inference task started
+ARM INFERENCE TIMING SAMPLES BEGIN
+ARM_TIMING sample=1 start_tick=0 end_tick=0 start_systick=44841 end_systick=30882
+ARM_TIMING sample=2 start_tick=0 end_tick=0 start_systick=29581 end_systick=27749
+ARM_TIMING sample=3 start_tick=0 end_tick=0 start_systick=27722 end_systick=25372
+ARM_TIMING sample=4 start_tick=0 end_tick=0 start_systick=25354 end_systick=23988
+ARM_TIMING sample=5 start_tick=0 end_tick=0 start_systick=23971 end_systick=22609
+ARM_TIMING sample=6 start_tick=0 end_tick=0 start_systick=22593 end_systick=21226
+ARM_TIMING sample=7 start_tick=0 end_tick=0 start_systick=21210 end_systick=19847
+ARM_TIMING sample=8 start_tick=0 end_tick=0 start_systick=19830 end_systick=18460
+ARM_TIMING sample=9 start_tick=0 end_tick=0 start_systick=18444 end_systick=17078
+ARM_TIMING sample=10 start_tick=0 end_tick=0 start_systick=17062 end_systick=14981
+ARM_TIMING sample=11 start_tick=0 end_tick=0 start_systick=14962 end_systick=13088
+ARM_TIMING sample=12 start_tick=0 end_tick=0 start_systick=13072 end_systick=11691
+ARM_TIMING sample=13 start_tick=0 end_tick=0 start_systick=11673 end_systick=10297
+ARM_TIMING sample=14 start_tick=0 end_tick=0 start_systick=10281 end_systick=8907
+ARM_TIMING sample=15 start_tick=0 end_tick=0 start_systick=8891 end_systick=7523
+ARM_TIMING sample=16 start_tick=0 end_tick=0 start_systick=7507 end_systick=6135
+ARM INFERENCE TIMING SAMPLES END
+SYSTICK_REGISTER reload=49999 control=65543
+ARM FREERTOS INFERENCE VALIDATION: PASS
+All 49 convolution outputs verified

@@ -1,0 +1,17 @@
+=== STATIC INFERENCE PATH ANALYSIS ===
+Function: depthwise_channel
+Target: native x86-64, GCC -O0
+Unique machine instruction sites: 89
+Output pixels: 49
+Kernel positions visited: 441
+Valid multiplication positions: 400
+Y-padding skips: 21
+X-padding skips: 20
+Executed MULSS instructions: 400
+Executed ADDSS instructions: 400
+Calculated executed machine instructions: 21747
+
+SCOPE:
+Static instruction-path count for this exact compiled
+single-channel convolution function and fixed dimensions.
+Not an execution-time or full-model WCET bound.

@@ -1,0 +1,57 @@
+CC = arm-none-eabi-gcc
+SIZE = arm-none-eabi-size
+
+KERNEL = ../FreeRTOS-Kernel
+BUILD = build_inference_timed
+
+CFLAGS = -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -O0 -g \
+         -ffreestanding -fno-builtin -fno-inline \
+         -fdata-sections -ffunction-sections \
+         -Iinstrumented_config -I. \
+         -I$(KERNEL)/include \
+         -I$(KERNEL)/portable/GCC/ARM_CM3
+
+LDFLAGS = -mcpu=cortex-m3 -mthumb -mfloat-abi=soft \
+          -nostartfiles -specs=nosys.specs \
+          -T linker.ld -Wl,--gc-sections \
+          -Wl,-Map=$(BUILD)/inference_timed.map
+
+OBJECTS = \
+    $(BUILD)/startup.o \
+    $(BUILD)/main_inference_timed.o \
+    $(BUILD)/depthwise_kernel.o \
+    $(BUILD)/tasks.o \
+    $(BUILD)/list.o \
+    $(BUILD)/queue.o \
+    $(BUILD)/port.o
+
+.PHONY: all
+all: $(BUILD)/inference_timed.elf
+	$(SIZE) $(BUILD)/inference_timed.elf
+
+$(BUILD):
+	mkdir -p $(BUILD)
+
+$(BUILD)/startup.o: startup.s | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/main_inference_timed.o: main_inference_timed.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/depthwise_kernel.o: ../linux-inference/depthwise_channel_static.c | $(BUILD)
+	$(CC) $(CFLAGS) -Dmain=unused_fixture_main -c $< -o $@
+
+$(BUILD)/tasks.o: $(KERNEL)/tasks.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/list.o: $(KERNEL)/list.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/queue.o: $(KERNEL)/queue.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/port.o: $(KERNEL)/portable/GCC/ARM_CM3/port.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/inference_timed.elf: $(OBJECTS) linker.ld
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@

@@ -1,0 +1,58 @@
+Timer with period zero, disabling
+Starting FreeRTOS on QEMU Cortex-M3
+Starting FreeRTOS scheduler
+FreeRTOS binary packet receiver ready
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+STACK_FREE_WORDS Task1=205 Task2=157 UART=221
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+=== DEADLINE_DIAGNOSTIC_BEGIN ===
+T1 expected=0 start=0 finish=0 systick_start=10492 systick_finish=7211
+T1 expected=100 start=100 finish=100 systick_start=48487 systick_finish=48314
+T1 expected=200 start=200 finish=200 systick_start=48958 systick_finish=48807
+T1 expected=300 start=300 finish=300 systick_start=48948 systick_finish=48799
+T1 expected=400 start=400 finish=400 systick_start=49272 systick_finish=49128
+T1 expected=500 start=500 finish=500 systick_start=49262 systick_finish=49113
+T1 expected=600 start=600 finish=600 systick_start=49253 systick_finish=49075
+T1 expected=700 start=700 finish=700 systick_start=49333 systick_finish=49181
+T1 expected=800 start=800 finish=800 systick_start=49283 systick_finish=49125
+T1 expected=900 start=900 finish=900 systick_start=48088 systick_finish=33356
+T1 expected=1000 start=1000 finish=1000 systick_start=49251 systick_finish=49091
+T1 expected=1100 start=1100 finish=1100 systick_start=49271 systick_finish=49137
+T2 expected=1 start=1 finish=1 systick_start=22219 systick_finish=20024
+T2 expected=251 start=251 finish=251 systick_start=48758 systick_finish=48619
+T2 expected=501 start=501 finish=501 systick_start=48352 systick_finish=48179
+T2 expected=751 start=751 finish=751 systick_start=48687 systick_finish=48526
+T2 expected=1001 start=1001 finish=1001 systick_start=48914 systick_finish=48774
+T2 expected=1251 start=1251 finish=1251 systick_start=49282 systick_finish=49143
+=== DEADLINE_DIAGNOSTIC_END ===
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+STACK_FREE_WORDS Task1=185 Task2=157 UART=221
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running

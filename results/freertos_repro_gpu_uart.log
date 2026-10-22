@@ -1,0 +1,54 @@
+=== LIVE MOBILENETV2 GPU INFERENCE ===
+Execution device: ['GPU.0']
+Live predicted class: 892
+Packet size: 12 bytes
+Packet HEX: a5 5a 01 00 7c 03 e2 45 a0 01 01 86
+
+=== STARTING FREERTOS ===
+Live inference packet sent: YES
+
+=== FREERTOS OUTPUT ===
+Timer with period zero, disabling
+Starting FreeRTOS on QEMU Cortex-M3
+Starting FreeRTOS scheduler
+FreeRTOS binary packet receiver ready
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS packet seq=1 class=892 timestamp_ms=27280866 valid=1
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+STACK_FREE_WORDS Task1=229 Task2=167 UART=221
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+STACK_FREE_WORDS Task1=229 Task2=167 UART=221
+FreeRTOS Task 2 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 1 running
+FreeRTOS Task 2 running
+qemu-system-arm: terminating on signal 15 from pid 58933 (./linux-inference/.venv/bin/python)
+
+LIVE GPU INFERENCE TO FREERTOS: PASS
+QEMU stopped safely

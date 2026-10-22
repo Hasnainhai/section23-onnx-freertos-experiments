@@ -1,0 +1,28 @@
+=== OPENVINO CPU THREAD COMPARISON ===
+Jobs per configuration: 50
+Period: 25 ms
+Deadline: 20 ms
+
+=== DEFAULT CPU CONFIGURATION ===
+Configured threads: 4
+Streams: 1
+Mean inference: 15.561 ms
+Median inference: 15.621 ms
+P99 inference: 17.545 ms
+Max inference: 18.127 ms
+Max start lateness: 0.712 ms
+Max response: 18.332 ms
+Deadline misses: 0 / 50
+
+=== SINGLE-THREAD CPU CONFIGURATION ===
+Configured threads: 1
+Streams: 1
+Mean inference: 13.192 ms
+Median inference: 11.561 ms
+P99 inference: 32.361 ms
+Max inference: 35.338 ms
+Max start lateness: 10.606 ms
+Max response: 35.596 ms
+Deadline misses: 5 / 50
+
+CPU THREAD COMPARISON: COMPLETED

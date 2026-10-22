@@ -1,0 +1,15 @@
+=== GPU INFERENCE BENCHMARK ===
+Execution device: ['GPU.0']
+Warm-up runs: 20
+Measured runs: 100
+
+=== RESULTS (milliseconds) ===
+Minimum: 8.939
+Mean:    9.275
+Median:  9.191
+P95:     9.702
+P99:     10.645
+Maximum: 10.767
+
+Saved measurements: ../results/gpu_latency.csv
+GPU BENCHMARK: PASS

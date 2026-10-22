@@ -1,0 +1,6 @@
+Timer with period zero, disabling
+Starting isolated ARM inference experiment
+Starting FreeRTOS scheduler
+FreeRTOS ARM inference task started
+ARM FREERTOS INFERENCE VALIDATION: PASS
+All 49 convolution outputs verified
