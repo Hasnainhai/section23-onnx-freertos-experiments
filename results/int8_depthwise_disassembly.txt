@@ -1,0 +1,71 @@
+
+build_mpu_partition/mpu_partition.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+000001c8 <depthwise_channel_int8>:
+     1c8:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+     1cc:	b085      	sub	sp, #20
+     1ce:	4681      	mov	r9, r0
+     1d0:	460e      	mov	r6, r1
+     1d2:	f04f 38ff 	mov.w	r8, #4294967295	@ 0xffffffff
+     1d6:	f06f 070d 	mvn.w	r7, #13
+     1da:	2300      	movs	r3, #0
+     1dc:	f102 010e 	add.w	r1, r2, #14
+     1e0:	46b6      	mov	lr, r6
+     1e2:	e033      	b.n	24c <depthwise_channel_int8+0x84>
+     1e4:	3201      	adds	r2, #1
+     1e6:	3301      	adds	r3, #1
+     1e8:	42a3      	cmp	r3, r4
+     1ea:	d00b      	beq.n	204 <depthwise_channel_int8+0x3c>
+     1ec:	280d      	cmp	r0, #13
+     1ee:	d8f9      	bhi.n	1e4 <depthwise_channel_int8+0x1c>
+     1f0:	2b00      	cmp	r3, #0
+     1f2:	dbf7      	blt.n	1e4 <depthwise_channel_int8+0x1c>
+     1f4:	eb09 0106 	add.w	r1, r9, r6
+     1f8:	56cd      	ldrsb	r5, [r1, r3]
+     1fa:	f992 1000 	ldrsb.w	r1, [r2]
+     1fe:	fb01 7705 	mla	r7, r1, r5, r7
+     202:	e7ef      	b.n	1e4 <depthwise_channel_int8+0x1c>
+     204:	9d01      	ldr	r5, [sp, #4]
+     206:	360e      	adds	r6, #14
+     208:	3503      	adds	r5, #3
+     20a:	3001      	adds	r0, #1
+     20c:	2d09      	cmp	r5, #9
+     20e:	d004      	beq.n	21a <depthwise_channel_int8+0x52>
+     210:	eb0e 0205 	add.w	r2, lr, r5
+     214:	4663      	mov	r3, ip
+     216:	9501      	str	r5, [sp, #4]
+     218:	e7e8      	b.n	1ec <depthwise_channel_int8+0x24>
+     21a:	9a02      	ldr	r2, [sp, #8]
+     21c:	4659      	mov	r1, fp
+     21e:	f842 7b04 	str.w	r7, [r2], #4
+     222:	3402      	adds	r4, #2
+     224:	f10c 0c02 	add.w	ip, ip, #2
+     228:	2c10      	cmp	r4, #16
+     22a:	d006      	beq.n	23a <depthwise_channel_int8+0x72>
+     22c:	4640      	mov	r0, r8
+     22e:	460e      	mov	r6, r1
+     230:	2500      	movs	r5, #0
+     232:	462f      	mov	r7, r5
+     234:	9202      	str	r2, [sp, #8]
+     236:	468b      	mov	fp, r1
+     238:	e7ea      	b.n	210 <depthwise_channel_int8+0x48>
+     23a:	9b03      	ldr	r3, [sp, #12]
+     23c:	465f      	mov	r7, fp
+     23e:	4651      	mov	r1, sl
+     240:	3307      	adds	r3, #7
+     242:	371c      	adds	r7, #28
+     244:	f108 0802 	add.w	r8, r8, #2
+     248:	2b31      	cmp	r3, #49	@ 0x31
+     24a:	d007      	beq.n	25c <depthwise_channel_int8+0x94>
+     24c:	19ca      	adds	r2, r1, r7
+     24e:	f04f 3cff 	mov.w	ip, #4294967295	@ 0xffffffff
+     252:	2402      	movs	r4, #2
+     254:	9303      	str	r3, [sp, #12]
+     256:	468a      	mov	sl, r1
+     258:	4639      	mov	r1, r7
+     25a:	e7e7      	b.n	22c <depthwise_channel_int8+0x64>
+     25c:	b005      	add	sp, #20
+     25e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}

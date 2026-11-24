@@ -1,0 +1,6 @@
+INT8 kernel PC range: 0x000001c8 .. 0x0000025e
+Static unique Thumb-2 instructions in kernel: 64
+Dynamic basic blocks executed in kernel: 2111
+Dynamic ARM Thumb-2 instructions executed: 7763
+FP32 Section 2.3 baseline instruction visits: 174471
+Instruction reduction factor: 22.47x (95.55% reduction)

@@ -1,0 +1,26 @@
+Job 01: class=892 linux=9.829ms uart+rtos=38.996ms e2e=48.825ms | E2E_ACK seq=1 class=892 rtos_ticks=0 int8_out0=61907
+Job 02: class=892 linux=9.831ms uart+rtos=44.669ms e2e=54.501ms | E2E_ACK seq=2 class=892 rtos_ticks=0 int8_out0=61907
+Job 03: class=892 linux=9.356ms uart+rtos=46.571ms e2e=55.928ms | E2E_ACK seq=3 class=892 rtos_ticks=0 int8_out0=61907
+Job 04: class=892 linux=10.170ms uart+rtos=45.960ms e2e=56.131ms | E2E_ACK seq=4 class=892 rtos_ticks=0 int8_out0=61907
+Job 05: class=892 linux=10.570ms uart+rtos=45.242ms e2e=55.813ms | E2E_ACK seq=5 class=892 rtos_ticks=0 int8_out0=61907
+Job 06: class=892 linux=9.352ms uart+rtos=46.477ms e2e=55.830ms | E2E_ACK seq=6 class=892 rtos_ticks=0 int8_out0=61907
+Job 07: class=892 linux=9.393ms uart+rtos=46.700ms e2e=56.093ms | E2E_ACK seq=7 class=892 rtos_ticks=0 int8_out0=61907
+Job 08: class=892 linux=9.440ms uart+rtos=46.424ms e2e=55.864ms | E2E_ACK seq=8 class=892 rtos_ticks=0 int8_out0=61907
+Job 09: class=892 linux=9.474ms uart+rtos=46.411ms e2e=55.885ms | E2E_ACK seq=9 class=892 rtos_ticks=0 int8_out0=61907
+Job 10: class=892 linux=9.771ms uart+rtos=46.323ms e2e=56.094ms | E2E_ACK seq=10 class=892 rtos_ticks=0 int8_out0=61907
+Job 11: class=892 linux=9.370ms uart+rtos=42.538ms e2e=51.908ms | E2E_ACK seq=11 class=892 rtos_ticks=0 int8_out0=61907
+Job 12: class=892 linux=9.378ms uart+rtos=46.502ms e2e=55.880ms | E2E_ACK seq=12 class=892 rtos_ticks=0 int8_out0=61907
+Job 13: class=892 linux=9.409ms uart+rtos=46.584ms e2e=55.993ms | E2E_ACK seq=13 class=892 rtos_ticks=0 int8_out0=61907
+Job 14: class=892 linux=11.845ms uart+rtos=48.131ms e2e=59.976ms | E2E_ACK seq=14 class=892 rtos_ticks=0 int8_out0=61907
+Job 15: class=892 linux=12.122ms uart+rtos=47.879ms e2e=60.001ms | E2E_ACK seq=15 class=892 rtos_ticks=0 int8_out0=61907
+Job 16: class=892 linux=9.329ms uart+rtos=46.608ms e2e=55.938ms | E2E_ACK seq=16 class=892 rtos_ticks=0 int8_out0=61907
+Job 17: class=892 linux=9.508ms uart+rtos=46.473ms e2e=55.981ms | E2E_ACK seq=17 class=892 rtos_ticks=0 int8_out0=61907
+Job 18: class=892 linux=9.499ms uart+rtos=46.385ms e2e=55.884ms | E2E_ACK seq=18 class=892 rtos_ticks=0 int8_out0=61907
+Job 19: class=892 linux=9.216ms uart+rtos=46.732ms e2e=55.948ms | E2E_ACK seq=19 class=892 rtos_ticks=0 int8_out0=61907
+Job 20: class=892 linux=9.711ms uart+rtos=46.302ms e2e=56.014ms | E2E_ACK seq=20 class=892 rtos_ticks=0 int8_out0=61907
+
+=== CONCRETE END-TO-END PIPELINE SUMMARY (20 Periodic Jobs @ 25ms) ===
+Mean E2E Latency : 55.724 ms
+Max E2E Latency  : 60.001 ms
+Deadline Misses  : 20/20 (Deadline = 20.0 ms)
+Saved CSV        : /home/hassnain/Documents/section23-onnx-freertos-experiments/results/e2e_mpu_pipeline_latency.csv

@@ -1,0 +1,58 @@
+CC = arm-none-eabi-gcc
+SIZE = arm-none-eabi-size
+
+KERNEL = ../FreeRTOS-Kernel
+BUILD = build_mpu_partition
+
+CFLAGS = -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -O1 -g \
+         -ffreestanding -fno-builtin -fno-inline \
+         -fdata-sections -ffunction-sections \
+         -Impu_config -I. \
+         -I$(KERNEL)/include \
+         -I$(KERNEL)/portable/GCC/ARM_CM3
+
+LDFLAGS = -mcpu=cortex-m3 -mthumb -mfloat-abi=soft \
+          -nostartfiles -specs=nosys.specs \
+          -T linker_mpu.ld -Wl,--gc-sections \
+          -Wl,-Map=$(BUILD)/mpu_partition.map
+
+OBJECTS = \
+    $(BUILD)/startup_mpu.o \
+    $(BUILD)/main_mpu_partitioned.o \
+    $(BUILD)/tasks.o \
+    $(BUILD)/list.o \
+    $(BUILD)/queue.o \
+    $(BUILD)/port.o
+
+.PHONY: all run
+all: $(BUILD)/mpu_partition.elf
+	$(SIZE) -A $(BUILD)/mpu_partition.elf
+
+$(BUILD):
+	mkdir -p $(BUILD)
+
+$(BUILD)/startup_mpu.o: startup_mpu.s | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/main_mpu_partitioned.o: main_mpu_partitioned.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/tasks.o: $(KERNEL)/tasks.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/list.o: $(KERNEL)/list.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/queue.o: $(KERNEL)/queue.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/port.o: $(KERNEL)/portable/GCC/ARM_CM3/port.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/mpu_partition.elf: $(OBJECTS) linker_mpu.ld
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+
+run: $(BUILD)/mpu_partition.elf
+	qemu-system-arm -machine lm3s6965evb -nographic \
+		-semihosting-config enable=on,target=native \
+		-kernel $(BUILD)/mpu_partition.elf | tee ../results/mpu_static_partition_proof.log

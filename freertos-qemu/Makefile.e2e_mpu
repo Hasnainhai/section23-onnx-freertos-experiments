@@ -1,0 +1,61 @@
+CC = arm-none-eabi-gcc
+SIZE = arm-none-eabi-size
+
+KERNEL = ../FreeRTOS-Kernel
+BUILD = build_e2e_mpu
+
+CFLAGS = -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -O1 -g \
+         -ffreestanding -fno-builtin -fno-inline \
+         -fdata-sections -ffunction-sections \
+         -Impu_config -I. \
+         -I$(KERNEL)/include \
+         -I$(KERNEL)/portable/GCC/ARM_CM3
+
+LDFLAGS = -mcpu=cortex-m3 -mthumb -mfloat-abi=soft \
+          -nostartfiles -specs=nosys.specs \
+          -T linker_mpu.ld -Wl,--gc-sections \
+          -Wl,-Map=$(BUILD)/e2e_mpu.map
+
+OBJECTS = \
+    $(BUILD)/startup_mpu.o \
+    $(BUILD)/main_e2e_mpu_uart.o \
+    $(BUILD)/uart0.o \
+    $(BUILD)/packet_decoder.o \
+    $(BUILD)/tasks.o \
+    $(BUILD)/list.o \
+    $(BUILD)/queue.o \
+    $(BUILD)/port.o
+
+.PHONY: all
+all: $(BUILD)/e2e_mpu.elf
+	$(SIZE) -A $(BUILD)/e2e_mpu.elf
+
+$(BUILD):
+	mkdir -p $(BUILD)
+
+$(BUILD)/startup_mpu.o: startup_mpu.s | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/main_e2e_mpu_uart.o: main_e2e_mpu_uart.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/uart0.o: uart0.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/packet_decoder.o: packet_decoder.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/tasks.o: $(KERNEL)/tasks.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/list.o: $(KERNEL)/list.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/queue.o: $(KERNEL)/queue.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/port.o: $(KERNEL)/portable/GCC/ARM_CM3/port.c | $(BUILD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BUILD)/e2e_mpu.elf: $(OBJECTS) linker_mpu.ld
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
